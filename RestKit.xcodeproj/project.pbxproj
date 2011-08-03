@@ -298,6 +298,7 @@
 		73C89EF312A5BB9A000FE600 /* RKReachabilityObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C89EF012A5BB9A000FE600 /* RKReachabilityObserver.m */; };
 		73FE56C7126CB91600E0F30B /* RKURL.h in Headers */ = {isa = PBXBuildFile; fileRef = 73FE56C4126CB91600E0F30B /* RKURL.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		73FE56C8126CB91600E0F30B /* RKURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FE56C5126CB91600E0F30B /* RKURL.m */; };
+		FDFABDBC13E9B2EF00D5E40A /* RestKit.h in Copy RestKit header */ = {isa = PBXBuildFile; fileRef = 253A089212551D8D00976E89 /* RestKit.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -400,6 +401,20 @@
 			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FDFABDBB13E9B2CE00D5E40A /* Copy RestKit header */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/RestKit;
+			dstSubfolderSpec = 16;
+			files = (
+				FDFABDBC13E9B2EF00D5E40A /* RestKit.h in Copy RestKit header */,
+			);
+			name = "Copy RestKit header";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		20808DBD13DE8CDC000A156A /* libRestKitJSONParser+NXJSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libRestKitJSONParser+NXJSON.a"; path = libRestKitJSONParserNXJSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1773,6 +1788,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 253A080F12551D4F00976E89 /* Build configuration list for PBXNativeTarget "RestKitSupport" */;
 			buildPhases = (
+				FDFABDBB13E9B2CE00D5E40A /* Copy RestKit header */,
 				253A080812551D3000976E89 /* Headers */,
 				253A080912551D3000976E89 /* Sources */,
 				253A080A12551D3000976E89 /* Frameworks */,
