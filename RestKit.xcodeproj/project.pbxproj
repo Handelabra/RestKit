@@ -437,7 +437,7 @@
 		250D5BFF13A069C400471F0E /* lcl_config_components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl_config_components.h; sourceTree = "<group>"; };
 		250D5C0113A069EA00471F0E /* lcl_config_extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl_config_extensions.h; sourceTree = "<group>"; };
 		250D5C0313A06A4D00471F0E /* lcl_config_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl_config_logger.h; sourceTree = "<group>"; };
-		250F060B13E3B2F900FAAFBF /* friends.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = friends.json; path = Dynamic/friends.json; sourceTree = "<group>"; };
+		250F060B13E3B2F900FAAFBF /* friends.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = friends.json; path = Dynamic/friends.json; sourceTree = "<group>"; };
 		2515E7B913B36A7D00E013A4 /* ArrayOfResults.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ArrayOfResults.json; sourceTree = "<group>"; };
 		2515E7BB13B36AC100E013A4 /* RKObjectLoaderSpecResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectLoaderSpecResultModel.h; sourceTree = "<group>"; };
 		2515E7BC13B36AC100E013A4 /* RKObjectLoaderSpecResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectLoaderSpecResultModel.m; sourceTree = "<group>"; };
@@ -454,9 +454,9 @@
 		252CF8B013E250730093BBD6 /* RKObjectDynamicMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectDynamicMapping.h; sourceTree = "<group>"; };
 		252CF8B113E250730093BBD6 /* RKObjectDynamicMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectDynamicMapping.m; sourceTree = "<group>"; };
 		252CF8B513E254C60093BBD6 /* RKObjectDynamicMappingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKObjectDynamicMappingSpec.m; sourceTree = "<group>"; };
-		252CF8B813E255D70093BBD6 /* boy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = boy.json; path = Dynamic/boy.json; sourceTree = "<group>"; };
-		252CF8BA13E255E20093BBD6 /* girl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = girl.json; path = Dynamic/girl.json; sourceTree = "<group>"; };
-		252CF8BC13E255EB0093BBD6 /* mixed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mixed.json; path = Dynamic/mixed.json; sourceTree = "<group>"; };
+		252CF8B813E255D70093BBD6 /* boy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = boy.json; path = Dynamic/boy.json; sourceTree = "<group>"; };
+		252CF8BA13E255E20093BBD6 /* girl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = girl.json; path = Dynamic/girl.json; sourceTree = "<group>"; };
+		252CF8BC13E255EB0093BBD6 /* mixed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mixed.json; path = Dynamic/mixed.json; sourceTree = "<group>"; };
 		252CF8BE13E25FE00093BBD6 /* RKDynamicMappingModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDynamicMappingModels.h; sourceTree = "<group>"; };
 		252CF8BF13E25FE00093BBD6 /* RKDynamicMappingModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDynamicMappingModels.m; sourceTree = "<group>"; };
 		2530078D137838D30074F3FD /* RKObjectMapper_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKObjectMapper_Private.h; sourceTree = "<group>"; };
@@ -2334,7 +2334,7 @@
 			};
 			name = Debug;
 		};
-		1DEB922408733DC00010E9CD /* Release */ = {
+		1DEB922408733DC00010E9CD /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -2352,7 +2352,7 @@
 				SYMROOT = Build;
 				VALID_ARCHS = "armv6 armv7 i386 x86_64";
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		20808DC313DE8CDC000A156A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2378,7 +2378,7 @@
 			};
 			name = Debug;
 		};
-		20808DC413DE8CDC000A156A /* Release */ = {
+		20808DC413DE8CDC000A156A /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2397,7 +2397,7 @@
 				PRODUCT_NAME = RestKitJSONParserNXJSON;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/NXJSON;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		20808DC513DE8CDC000A156A /* Distribution */ = {
 			isa = XCBuildConfiguration;
@@ -2449,7 +2449,7 @@
 			};
 			name = Debug;
 		};
-		2523360711E79F0A0048F9B4 /* Release */ = {
+		2523360711E79F0A0048F9B4 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
@@ -2475,7 +2475,7 @@
 				VALID_ARCHS = "armv6 armv7 i386";
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		253216491338CA940099A5DB /* Distribution */ = {
 			isa = XCBuildConfiguration;
@@ -2702,7 +2702,7 @@
 			};
 			name = Debug;
 		};
-		253A07FE1255161B00976E89 /* Release */ = {
+		253A07FE1255161B00976E89 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2715,7 +2715,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Network;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		253A08041255162D00976E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2732,7 +2732,7 @@
 			};
 			name = Debug;
 		};
-		253A08051255162D00976E89 /* Release */ = {
+		253A08051255162D00976E89 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2745,7 +2745,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/ObjectMapping;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		253A080D12551D3100976E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2762,7 +2762,7 @@
 			};
 			name = Debug;
 		};
-		253A080E12551D3100976E89 /* Release */ = {
+		253A080E12551D3100976E89 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2775,7 +2775,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		253A081512551D5400976E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2791,7 +2791,7 @@
 			};
 			name = Debug;
 		};
-		253A081612551D5400976E89 /* Release */ = {
+		253A081612551D5400976E89 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2803,7 +2803,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/CoreData;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		255920CC13BDEDB400E9C29C /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
@@ -3049,14 +3049,14 @@
 			};
 			name = Debug;
 		};
-		255B758B133BABBF00ED76AD /* Release */ = {
+		255B758B133BABBF00ED76AD /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		255B758C133BABBF00ED76AD /* Distribution */ = {
 			isa = XCBuildConfiguration;
@@ -3089,7 +3089,7 @@
 			};
 			name = Debug;
 		};
-		2590E651125231F600531FA8 /* Release */ = {
+		2590E651125231F600531FA8 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3109,7 +3109,7 @@
 				YAJL_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast -Wnested-externs -Wold-style-definition";
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		2590E66C1252353800531FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3129,7 +3129,7 @@
 			};
 			name = Debug;
 		};
-		2590E66D1252353800531FA8 /* Release */ = {
+		2590E66D1252353800531FA8 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3145,7 +3145,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/SBJSON;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		259DF7801340290600233DF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3164,7 +3164,7 @@
 			};
 			name = Debug;
 		};
-		259DF7811340290600233DF4 /* Release */ = {
+		259DF7811340290600233DF4 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3178,7 +3178,7 @@
 				PRODUCT_NAME = RestKitXMLParserLibxml;
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/XML/LibXML;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		259DF7821340290600233DF4 /* Distribution */ = {
 			isa = XCBuildConfiguration;
@@ -3244,7 +3244,7 @@
 			};
 			name = Debug;
 		};
-		3F6C39A910FE5C95008F47C5 /* Release */ = {
+		3F6C39A910FE5C95008F47C5 /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3288,7 +3288,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 		73057FD21331AD2E001908EE /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3307,7 +3307,7 @@
 			};
 			name = Debug;
 		};
-		73057FD31331AD2E001908EE /* Release */ = {
+		73057FD31331AD2E001908EE /* Cupcakes */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3322,7 +3322,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/RestKit/Support/JSON/JSONKit;
 				ZERO_LINK = NO;
 			};
-			name = Release;
+			name = Cupcakes;
 		};
 /* End XCBuildConfiguration section */
 
@@ -3331,143 +3331,143 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
-				1DEB922408733DC00010E9CD /* Release */,
+				1DEB922408733DC00010E9CD /* Cupcakes */,
 				253216491338CA940099A5DB /* Distribution */,
 				255920CC13BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		20808DC213DE8CDC000A156A /* Build configuration list for PBXNativeTarget "RestKitJSONParser+NXJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20808DC313DE8CDC000A156A /* Debug */,
-				20808DC413DE8CDC000A156A /* Release */,
+				20808DC413DE8CDC000A156A /* Cupcakes */,
 				20808DC513DE8CDC000A156A /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		2523361C11E79F170048F9B4 /* Build configuration list for PBXNativeTarget "RestKitThree20" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2523360611E79F0A0048F9B4 /* Debug */,
-				2523360711E79F0A0048F9B4 /* Release */,
+				2523360711E79F0A0048F9B4 /* Cupcakes */,
 				253216521338CA940099A5DB /* Distribution */,
 				255920D613BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		253A08061255165300976E89 /* Build configuration list for PBXNativeTarget "RestKitNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				253A07FD1255161B00976E89 /* Debug */,
-				253A07FE1255161B00976E89 /* Release */,
+				253A07FE1255161B00976E89 /* Cupcakes */,
 				2532164B1338CA940099A5DB /* Distribution */,
 				255920CE13BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		253A08071255165300976E89 /* Build configuration list for PBXNativeTarget "RestKitObjectMapping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				253A08041255162D00976E89 /* Debug */,
-				253A08051255162D00976E89 /* Release */,
+				253A08051255162D00976E89 /* Cupcakes */,
 				2532164C1338CA940099A5DB /* Distribution */,
 				255920CF13BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		253A080F12551D4F00976E89 /* Build configuration list for PBXNativeTarget "RestKitSupport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				253A080D12551D3100976E89 /* Debug */,
-				253A080E12551D3100976E89 /* Release */,
+				253A080E12551D3100976E89 /* Cupcakes */,
 				2532164D1338CA940099A5DB /* Distribution */,
 				255920D013BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		253A085E12551D7300976E89 /* Build configuration list for PBXNativeTarget "RestKitCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				253A081512551D5400976E89 /* Debug */,
-				253A081612551D5400976E89 /* Release */,
+				253A081612551D5400976E89 /* Cupcakes */,
 				253216511338CA940099A5DB /* Distribution */,
 				255920D513BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		255B7589133BABBF00ED76AD /* Build configuration list for PBXAggregateTarget "RestKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				255B758A133BABBF00ED76AD /* Debug */,
-				255B758B133BABBF00ED76AD /* Release */,
+				255B758B133BABBF00ED76AD /* Cupcakes */,
 				255B758C133BABBF00ED76AD /* Distribution */,
 				255920CD13BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		2590E6541252323000531FA8 /* Build configuration list for PBXNativeTarget "RestKitJSONParser+YAJL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2590E650125231F600531FA8 /* Debug */,
-				2590E651125231F600531FA8 /* Release */,
+				2590E651125231F600531FA8 /* Cupcakes */,
 				2532164E1338CA940099A5DB /* Distribution */,
 				255920D113BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		2590E6721252357200531FA8 /* Build configuration list for PBXNativeTarget "RestKitJSONParser+SBJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2590E66C1252353800531FA8 /* Debug */,
-				2590E66D1252353800531FA8 /* Release */,
+				2590E66D1252353800531FA8 /* Cupcakes */,
 				2532164F1338CA940099A5DB /* Distribution */,
 				255920D213BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		259DF77F1340290600233DF4 /* Build configuration list for PBXNativeTarget "RestKitXMLParser+Libxml" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				259DF7801340290600233DF4 /* Debug */,
-				259DF7811340290600233DF4 /* Release */,
+				259DF7811340290600233DF4 /* Cupcakes */,
 				259DF7821340290600233DF4 /* Distribution */,
 				255920D413BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		3F6C39AA10FE5C95008F47C5 /* Build configuration list for PBXNativeTarget "UISpec" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F6C39A810FE5C95008F47C5 /* Debug */,
-				3F6C39A910FE5C95008F47C5 /* Release */,
+				3F6C39A910FE5C95008F47C5 /* Cupcakes */,
 				253216531338CA940099A5DB /* Distribution */,
 				255920D713BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 		73057FD81331AD85001908EE /* Build configuration list for PBXNativeTarget "RestKitJSONParser+JSONKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73057FD21331AD2E001908EE /* Debug */,
-				73057FD31331AD2E001908EE /* Release */,
+				73057FD31331AD2E001908EE /* Cupcakes */,
 				253216501338CA940099A5DB /* Distribution */,
 				255920D313BDEDB400E9C29C /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Cupcakes;
 		};
 /* End XCConfigurationList section */
 	};
