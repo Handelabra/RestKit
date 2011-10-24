@@ -2497,7 +2497,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 x86_64";
 			};
 			name = Debug;
 		};
@@ -2522,7 +2522,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 x86_64";
 			};
 			name = Cupcakes;
 		};
@@ -2670,7 +2670,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 x86_64";
 			};
 			name = Distribution;
 		};
@@ -3001,7 +3001,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SYMROOT = Build;
-				VALID_ARCHS = "armv6 armv7 i386 x86_64";
+				VALID_ARCHS = "armv6 armv7 x86_64";
 			};
 			name = "Ad Hoc";
 		};
