@@ -3,7 +3,19 @@
 //  RestKit
 //
 //  Created by Blake Watters on 9/22/09.
-//  Copyright 2009 Two Toasters. All rights reserved.
+//  Copyright 2009 Two Toasters
+//  
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//  
+//  http://www.apache.org/licenses/LICENSE-2.0
+//  
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 #import "RKManagedObjectStore.h"
@@ -23,7 +35,7 @@ static NSString* const RKManagedObjectStoreThreadDictionaryEntityCacheKey = @"RK
 - (id)initWithStoreFilename:(NSString *)storeFilename inDirectory:(NSString *)nilOrDirectoryPath usingSeedDatabaseName:(NSString *)nilOrNameOfSeedDatabaseInMainBundle managedObjectModel:(NSManagedObjectModel*)nilOrManagedObjectModel delegate:(id)delegate;
 - (void)createPersistentStoreCoordinator;
 - (void)createStoreIfNecessaryUsingSeedDatabase:(NSString*)seedDatabase;
-- (NSString *)applicationDocumentsDirectory;
+- (NSString *)applicationDataDirectory;
 - (NSManagedObjectContext*)newManagedObjectContext;
 @end
 
@@ -58,7 +70,7 @@ static NSString* const RKManagedObjectStoreThreadDictionaryEntityCacheKey = @"RK
 		_storeFilename = [storeFilename retain];
 		
 		if (nilOrDirectoryPath == nil) {
-			nilOrDirectoryPath = [self applicationDocumentsDirectory];
+			nilOrDirectoryPath = [self applicationDataDirectory];
 		} else {
 			BOOL isDir;
 			NSAssert1([[NSFileManager defaultManager] fileExistsAtPath:nilOrDirectoryPath isDirectory:&isDir] && isDir == YES, @"Specified storage directory exists", nilOrDirectoryPath);
@@ -119,17 +131,45 @@ static NSString* const RKManagedObjectStoreThreadDictionaryEntityCacheKey = @"RK
  */
 - (NSError*)save {
 	NSManagedObjectContext* moc = [self managedObjectContext];
-    NSError *error = nil;
-	
+	NSError *error;
 	@try {
 		if (![moc save:&error]) {
 			if (self.delegate != nil && [self.delegate respondsToSelector:@selector(managedObjectStore:didFailToSaveContext:error:exception:)]) {
 				[self.delegate managedObjectStore:self didFailToSaveContext:moc error:error exception:nil];
 			}
-			
+
 			NSDictionary* userInfo = [NSDictionary dictionaryWithObject:error forKey:@"error"];
 			[[NSNotificationCenter defaultCenter] postNotificationName:RKManagedObjectStoreDidFailSaveNotification object:self userInfo:userInfo];
-			
+
+			if ([[error domain] isEqualToString:@"NSCocoaErrorDomain"]) {
+				NSDictionary *userInfo = [error userInfo];
+				NSArray *errors = [userInfo valueForKey:@"NSDetailedErrors"];
+				if (errors) {
+					for (NSError *detailedError in errors) {
+						NSDictionary *subUserInfo = [detailedError userInfo];
+						RKLogError(@"Core Data Save Error\n \
+							  NSLocalizedDescription:\t\t%@\n \
+							  NSValidationErrorKey:\t\t\t%@\n \
+							  NSValidationErrorPredicate:\t%@\n \
+							  NSValidationErrorObject:\n%@\n",
+							  [subUserInfo valueForKey:@"NSLocalizedDescription"], 
+							  [subUserInfo valueForKey:@"NSValidationErrorKey"], 
+							  [subUserInfo valueForKey:@"NSValidationErrorPredicate"], 
+							  [subUserInfo valueForKey:@"NSValidationErrorObject"]);
+					}
+				}
+				else {
+					RKLogError(@"Core Data Save Error\n \
+							   NSLocalizedDescription:\t\t%@\n \
+							   NSValidationErrorKey:\t\t\t%@\n \
+							   NSValidationErrorPredicate:\t%@\n \
+							   NSValidationErrorObject:\n%@\n", 
+							   [userInfo valueForKey:@"NSLocalizedDescription"],
+							   [userInfo valueForKey:@"NSValidationErrorKey"], 
+							   [userInfo valueForKey:@"NSValidationErrorPredicate"], 
+							   [userInfo valueForKey:@"NSValidationErrorObject"]);
+				}
+			} 
 			return error;
 		}
 	}
@@ -265,11 +305,11 @@ static NSString* const RKManagedObjectStoreThreadDictionaryEntityCacheKey = @"RK
 	
 	for (NSManagedObject* object in insertedObjects) {
 		if ([object respondsToSelector:@selector(primaryKeyProperty)]) {
-			Class class = [object class];
-			NSString* primaryKey = [class performSelector:@selector(primaryKeyProperty)];
+			Class theClass = [object class];
+			NSString* primaryKey = [theClass performSelector:@selector(primaryKeyProperty)];
 			id primaryKeyValue = [object valueForKey:primaryKey];
 			
-			NSMutableDictionary* classCache = [threadDictionary objectForKey:class];
+			NSMutableDictionary* classCache = [threadDictionary objectForKey:theClass];
 			if (classCache && primaryKeyValue && [classCache objectForKey:primaryKeyValue] == nil) {
 				[classCache setObject:object forKey:primaryKeyValue];
 			}
@@ -283,10 +323,46 @@ static NSString* const RKManagedObjectStoreThreadDictionaryEntityCacheKey = @"RK
 /**
  Returns the path to the application's documents directory.
  */
-- (NSString *)applicationDocumentsDirectory {	
+
+- (NSString *)applicationDataDirectory {	
+    
+#if TARGET_OS_IPHONE
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     return basePath;
+
+#else
+
+    NSFileManager* sharedFM = [NSFileManager defaultManager];
+    
+    NSArray* possibleURLs = [sharedFM URLsForDirectory:NSApplicationSupportDirectory
+                                             inDomains:NSUserDomainMask];
+    NSURL* appSupportDir = nil;
+    NSURL* appDirectory = nil;
+    
+    if ([possibleURLs count] >= 1) {
+        appSupportDir = [possibleURLs objectAtIndex:0];
+    }
+    
+    if (appSupportDir) {
+        NSString *executableName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleExecutable"];
+        appDirectory = [appSupportDir URLByAppendingPathComponent:executableName];
+        
+        
+        if(![sharedFM fileExistsAtPath:[appDirectory path]]) {
+            NSError* error = nil;
+            
+            if(![sharedFM createDirectoryAtURL:appDirectory withIntermediateDirectories:NO attributes:nil error:&error]) {
+                NSLog(@"%@", error);
+            }
+        }
+        return [appDirectory path];
+    }
+
+    return nil;
+#endif
+    
 }
 
 - (NSManagedObject*)objectWithID:(NSManagedObjectID*)objectID {
