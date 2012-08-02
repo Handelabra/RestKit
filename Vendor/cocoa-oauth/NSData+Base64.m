@@ -313,4 +313,19 @@ char *NewBase64Encode(
 	return result;
 }
 
+- (NSString *)base64EncodedStringSingleLine
+{
+    size_t outputLength;
+    char *outputBuffer =
+    NewBase64Encode([self bytes], [self length], false, &outputLength);
+    
+    NSString *result =
+    [[NSString alloc]
+     initWithBytes:outputBuffer
+     length:outputLength
+     encoding:NSASCIIStringEncoding];
+    free(outputBuffer);
+    return result;
+}
+
 @end
