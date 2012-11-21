@@ -335,6 +335,8 @@ typedef NSUInteger RKTableControllerState;
 @property (nonatomic, assign) BOOL showsFooterRowsWhenEmpty;
 @property (nonatomic, retain) RKTableItem *emptyItem;
 
+- (void)showImageInOverlay:(UIImage *)image;
+
 ///-----------------------------------------------------------------------------
 /// @name Managing Sections
 ///-----------------------------------------------------------------------------
