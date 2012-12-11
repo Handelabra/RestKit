@@ -120,6 +120,8 @@
  */
 @property (nonatomic, copy) NSString *sectionNameKeyPath;
 
+@property (nonatomic, copy) NSArray *sortDescriptors;
+
 /**
  Returns the section at the specified index.
  @param index Must be less than the total number of sections.

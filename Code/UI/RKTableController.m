@@ -339,6 +339,11 @@
 {
     // TODO: Could not get the KVO to work without a boolean property...
     // TODO: Apply any sorting...
+    
+    if (self.sortDescriptors)
+    {
+        objects = [objects sortedArrayUsingDescriptors:self.sortDescriptors];
+    }
 
     if (self.sectionNameKeyPath) {
         NSArray *sectionedObjects = [objects sectionsGroupedByKeyPath:self.sectionNameKeyPath];
