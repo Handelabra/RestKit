@@ -225,6 +225,8 @@ typedef void(^RKObjectPaginatorDidFailWithErrorBlock)(NSError *error, RKObjectLo
  */
 - (void)loadPage:(NSUInteger)pageNumber;
 
+- (void)cancelLoad;
+
 @end
 
 /**

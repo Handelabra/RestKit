@@ -144,6 +144,11 @@ static NSUInteger RKObjectPaginatorDefaultPerPage = 25;
     return self.currentPage > 1;
 }
 
+- (void)cancelLoad
+{
+    [self.objectLoader cancel];
+}
+
 #pragma mark - RKObjectLoaderDelegate methods
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
